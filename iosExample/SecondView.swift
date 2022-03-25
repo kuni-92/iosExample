@@ -11,6 +11,9 @@ import SwiftUI
 struct SecondView: View {
     var body: some View {
         Text("I am Second View")
+        NavigationLink(destination: ThirdView()) {
+           Text("Jamp to Next View")
+        }
     }
 }
 
