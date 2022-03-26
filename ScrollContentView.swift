@@ -10,7 +10,17 @@ import SwiftUI
 
 struct ScrollContentView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .center) {
+                ForEach(1 ..< 100) {index in
+                    HStack {
+                        Text("music \(index)")
+                        Image(systemName: "play")
+                    }
+                    .padding()
+                }
+            }
+        }
     }
 }
 
