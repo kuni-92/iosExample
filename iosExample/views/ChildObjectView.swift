@@ -16,6 +16,9 @@ struct ChildObjectView: View {
         Button("Countup") {
             data.number += 1
         }
+        NavigationLink(destination: EnvObjectView()) {
+            Text("Jamp to Environment Object View")
+        }
     }
 }
 
