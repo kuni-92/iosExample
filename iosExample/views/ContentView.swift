@@ -15,6 +15,10 @@ struct ContentView: View {
                 NavigationLink(destination: SecondView(), label: {
                     Text("Jamp to Second View")
                 })
+
+                NavigationLink(destination: StateObjectView()) {
+                    Text("Jamp to StateObject")
+                }
             }
         }
         .navigationTitle("NavigationTitle")
