@@ -19,6 +19,11 @@ struct ContentView: View {
                 NavigationLink(destination: StateObjectView()) {
                     Text("Jamp to StateObject")
                 }
+
+                Button("Logger Run") {
+                    let logger = Logger()
+                    logger.Run()
+                }
             }
         }
         .navigationTitle("NavigationTitle")
