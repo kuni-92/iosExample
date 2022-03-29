@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class Logger {
-    var tappedEvent = PassthroughSubject<String, Never>()
+    var tappedEvent = CurrentValueSubject<String, Never>("")
 
     func Run() {
         let logger = Logger()
@@ -20,7 +20,7 @@ class Logger {
         })
 
         logger.tappedEvent.send("LoginButton")
-        logger.tappedEvent.send("CameraButton")
+        logger.tappedEvent.value = "CameraButton"
         subscriber.cancel()
         logger.tappedEvent.send("LogoutButton")
     }
