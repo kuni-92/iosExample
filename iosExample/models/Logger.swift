@@ -10,19 +10,19 @@ import Foundation
 import Combine
 
 class Logger {
-    var tappedEvent = CurrentValueSubject<String, Never>("")
+    @Published var tappedEventName: String = ""
 
     func Run() {
         let logger = Logger()
 
-        let subscriber = logger.tappedEvent.sink(receiveValue: { event in
+        let subscriber = logger.$tappedEventName.sink(receiveValue: { event in
             print("event Name: \(event)")
         })
 
-        logger.tappedEvent.send("LoginButton")
-        logger.tappedEvent.value = "CameraButton"
+        logger.tappedEventName = "LoginButton"
+        logger.tappedEventName = "CameraButton"
         subscriber.cancel()
-        logger.tappedEvent.send("LogoutButton")
+        logger.tappedEventName = "LogoutButton"
     }
 }
 
